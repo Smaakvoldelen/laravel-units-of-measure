@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Smaakvoldelen\Units\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class UnitsCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-unit-of-measure';
 
     public $description = 'My command';
 
