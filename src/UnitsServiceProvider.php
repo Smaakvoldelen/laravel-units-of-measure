@@ -2,9 +2,9 @@
 
 namespace Smaakvoldelen\Units;
 
+use Smaakvoldelen\Units\Commands\UnitsCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Smaakvoldelen\Units\Commands\UnitsCommand;
 
 class UnitsServiceProvider extends PackageServiceProvider
 {
