@@ -10,8 +10,9 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Str;
 use JsonSerializable;
 use Smaakvoldelen\UnitsOfMeasure\Casts\UnitCast;
+use Stringable;
 
-abstract class Unit implements Arrayable, Castable, Jsonable, JsonSerializable, Renderable
+abstract class Unit implements Arrayable, Castable, Jsonable, JsonSerializable, Renderable, Stringable
 {
     /**
      * The class name where all the measurements are stored for the unit.
