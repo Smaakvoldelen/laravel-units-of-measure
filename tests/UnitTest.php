@@ -15,7 +15,7 @@ it('can be formatted', function () {
         ->toEqual('2');
 });
 
-it ('can be casted', function() {
+it('can be casted', function () {
     expect(Mass::castUsing([]))
         ->toBe(UnitCast::class);
 });
