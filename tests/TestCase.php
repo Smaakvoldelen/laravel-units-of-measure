@@ -1,10 +1,10 @@
 <?php
 
-namespace Smaakvoldelen\Units\Tests;
+namespace Smaakvoldelen\UnitsOfMeasure\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Smaakvoldelen\Units\UnitsServiceProvider;
+use Smaakvoldelen\UnitsOfMeasure\UnitsServiceProvider;
 
 class TestCase extends Orchestra
 {

@@ -1,8 +1,7 @@
 <?php
 
-namespace Smaakvoldelen\Units;
+namespace Smaakvoldelen\UnitsOfMeasure;
 
-use Smaakvoldelen\Units\Commands\UnitsCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -17,9 +16,6 @@ class UnitsServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-unit-of-measure')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-unit-of-measure_table')
-            ->hasCommand(UnitsCommand::class);
+            ->hasConfigFile();
     }
 }

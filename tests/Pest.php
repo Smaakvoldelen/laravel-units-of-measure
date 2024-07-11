@@ -1,5 +1,5 @@
 <?php
 
-use Smaakvoldelen\Units\Tests\TestCase;
+use Smaakvoldelen\UnitsOfMeasure\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);
