@@ -80,7 +80,6 @@ enum VolumeMeasurements: string implements Measurement
     case LIQUID_QUART = 'liquid qt';
     case SHOT = 'shot';
 
-
     /**
      * Try to find the measurement from a given alias.
      */
