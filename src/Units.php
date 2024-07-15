@@ -6,6 +6,7 @@ use Exception;
 use Smaakvoldelen\UnitsOfMeasure\Units\Amount;
 use Smaakvoldelen\UnitsOfMeasure\Units\Length;
 use Smaakvoldelen\UnitsOfMeasure\Units\Mass;
+use Smaakvoldelen\UnitsOfMeasure\Units\Temperature;
 use Smaakvoldelen\UnitsOfMeasure\Units\Volume;
 
 class Units
@@ -19,6 +20,7 @@ class Units
             Mass::class,
             Length::class,
             Volume::class,
+            Temperature::class,
             Amount::class,
         ];
 
