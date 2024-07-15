@@ -3,6 +3,7 @@
 namespace Smaakvoldelen\UnitsOfMeasure;
 
 use Exception;
+use Smaakvoldelen\UnitsOfMeasure\Units\Length;
 use Smaakvoldelen\UnitsOfMeasure\Units\Mass;
 use Smaakvoldelen\UnitsOfMeasure\Units\Volume;
 
@@ -15,6 +16,7 @@ class Units
     {
         $units = [
             Mass::class,
+            Length::class,
             Volume::class,
         ];
 
