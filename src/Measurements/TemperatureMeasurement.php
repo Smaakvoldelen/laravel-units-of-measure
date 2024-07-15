@@ -36,8 +36,8 @@ enum TemperatureMeasurement: string implements Measurement
             self::CELSIUS => $value - 273.15,
             self::FAHRENHEIT => $value * 9 / 5 - 459.67,
             self::KELVIN => $value,
-            self::RANKINE => $value * (9/5),
-            self::ROMER => ($value - 273.15) * (21/40) + 7.5,
+            self::RANKINE => $value * (9 / 5),
+            self::ROMER => ($value - 273.15) * (21 / 40) + 7.5,
         };
     }
 
@@ -47,8 +47,8 @@ enum TemperatureMeasurement: string implements Measurement
             self::CELSIUS => $value + 273.15,
             self::FAHRENHEIT => ($value + 459.67) * 5 / 9,
             self::KELVIN => $value,
-            self::RANKINE => $value * (5/9),
-            self::ROMER => ($value - 7.5) * (40/21) + 273.15,
+            self::RANKINE => $value * (5 / 9),
+            self::ROMER => ($value - 7.5) * (40 / 21) + 273.15,
         };
     }
 
