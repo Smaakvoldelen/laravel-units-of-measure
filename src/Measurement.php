@@ -27,7 +27,7 @@ interface Measurement extends BackedEnum
     public function to(float $value, Measurement $measurement): float;
 
     /**
-     * Try to find the measurement from an given alias.
+     * Try to find the measurement from a given alias.
      */
     public static function tryFromAlias(string $alias): ?Measurement;
 }

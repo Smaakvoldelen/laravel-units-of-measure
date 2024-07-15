@@ -42,6 +42,48 @@ enum MassMeasurements: string implements Measurement
     case SHORTTON = 'short ton';
     case LONGTON = 'long ton';
 
+    /**
+     * Try to find the measurement from a given alias.
+     */
+    public static function tryFromAlias(string $alias): ?Measurement
+    {
+        return match ($alias) {
+            'yottagram', 'yottagrams' => self::YOTTAGRAM,
+            'zettagram', 'zettagrams' => self::ZETTAGRAM,
+            'exagram', 'exagrams' => self::EXAGRAM,
+            'petagram', 'petagrams' => self::PETAGRAM,
+            'teragram', 'teragrams' => self::TERAGRAM,
+            'gigagram', 'gigagrams' => self::GIGAGRAM,
+            'megagram', 'megagrams' => self::MEGAGRAM,
+            'kilogram', 'kilograms' => self::KILOGRAM,
+            'hectogram', 'hectograms' => self::HECTOGRAM,
+            'decagram', 'decagrams' => self::DECAGRAM,
+            'gram', 'grams' => self::GRAM,
+            'decigram', 'decigrams' => self::DECIGRAM,
+            'centigram', 'centigrams' => self::CENTIGRAM,
+            'milligram', 'milligrams' => self::MILLIGRAM,
+            'microgram', 'micrograms' => self::MICROGRAM,
+            'nanogram', 'nanograms' => self::NANOGRAM,
+            'picogram', 'picograms' => self::PICOGRAM,
+            'femtogram', 'femtograms' => self::FEMTOGRAM,
+            'attogram', 'attograms' => self::ATTOGRAM,
+            'zeptogram', 'zeptograms' => self::ZEPTOGRAM,
+            'yoctogram', 'yoctograms' => self::YOCTOGRAM,
+            'tonne', 'tonnes' => self::TONNE,
+            'grain', 'grains' => self::GRAIN,
+            'drachm', 'drachms' => self::DRACHM,
+            'ounce', 'ounces' => self::OUNCE,
+            'pound', 'pounds' => self::POUND,
+            'stone', 'stones' => self::STONE,
+            'quarter', 'quarters' => self::QUARTER,
+            'short hundredweight', 'short hundredweights' => self::SHORTHUNDREDWEIGHT,
+            'long hundredweight', 'long hundredweights' => self::LONGHUNDREDWEIGHT,
+            'short ton', 'short tons' => self::SHORTTON,
+            'long ton', 'long tons' => self::LONGTON,
+            default => null,
+        };
+    }
+
     public function getFactor(): float
     {
         return match ($this) {
@@ -85,47 +127,5 @@ enum MassMeasurements: string implements Measurement
     public function getSymbol(): string
     {
         return $this->value;
-    }
-
-    /**
-     * Try to find the measurement from an given alias.
-     */
-    public static function tryFromAlias(string $alias): ?Measurement
-    {
-        return match ($alias) {
-            'yottagram', 'yottagrams' => self::YOTTAGRAM,
-            'zettagram', 'zettagrams' => self::ZETTAGRAM,
-            'exagram', 'exagrams' => self::EXAGRAM,
-            'petagram', 'petagrams' => self::PETAGRAM,
-            'teragram', 'teragrams' => self::TERAGRAM,
-            'gigagram', 'gigagrams' => self::GIGAGRAM,
-            'megagram', 'megagrams' => self::MEGAGRAM,
-            'kilogram', 'kilograms' => self::KILOGRAM,
-            'hectogram', 'hectograms' => self::HECTOGRAM,
-            'decagram', 'decagrams' => self::DECAGRAM,
-            'gram', 'grams' => self::GRAM,
-            'decigram', 'decigrams' => self::DECIGRAM,
-            'centigram', 'centigrams' => self::CENTIGRAM,
-            'milligram', 'milligrams' => self::MILLIGRAM,
-            'microgram', 'micrograms' => self::MICROGRAM,
-            'nanogram', 'nanograms' => self::NANOGRAM,
-            'picogram', 'picograms' => self::PICOGRAM,
-            'femtogram', 'femtograms' => self::FEMTOGRAM,
-            'attogram', 'attograms' => self::ATTOGRAM,
-            'zeptogram', 'zeptograms' => self::ZEPTOGRAM,
-            'yoctogram', 'yoctograms' => self::YOCTOGRAM,
-            'tonne', 'tonnes' => self::TONNE,
-            'grain', 'grains' => self::GRAIN,
-            'drachm', 'drachms' => self::DRACHM,
-            'ounce', 'ounces' => self::OUNCE,
-            'pound', 'pounds' => self::POUND,
-            'stone', 'stones' => self::STONE,
-            'quarter', 'quarters' => self::QUARTER,
-            'short hundredweight', 'short hundredweights' => self::SHORTHUNDREDWEIGHT,
-            'long hundredweight', 'long hundredweights' => self::LONGHUNDREDWEIGHT,
-            'short ton', 'short tons' => self::SHORTTON,
-            'long ton', 'long tons' => self::LONGTON,
-            default => null,
-        };
     }
 }
