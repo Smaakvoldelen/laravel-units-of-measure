@@ -80,10 +80,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Smaakvoldelen\\Units\\UnitsServiceProvider"
+                "Smaakvoldelen\\UnitsOfMeasure\\UnitsServiceProvider"
             ],
             "aliases": {
-                "Units": "Smaakvoldelen\\Units\\Facades\\Units"
+                "Units": "Smaakvoldelen\\UnitsOfMeasure\\Facades\\Units"
             }
         }
     },
