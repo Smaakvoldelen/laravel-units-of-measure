@@ -235,12 +235,4 @@ enum VolumeMeasurements: string implements Measurement
             self::SHOT => 0.0443602943,
         };
     }
-
-    /**
-     * Get the symbol for the measurement.
-     */
-    public function getSymbol(): string
-    {
-        return $this->value;
-    }
 }

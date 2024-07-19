@@ -120,13 +120,16 @@ abstract class Unit implements Arrayable, Castable, Jsonable, JsonSerializable, 
     /**
      * Format the unit to a human-readable string.
      */
-    public function format(int $precision = 2): string
+    public function format(int $precision = 2, bool $trimDecimals = true, bool $withSuffix = true): string
     {
         $value = $this->getValue();
-        $suffix = ' '.$this->getMeasurement()->getSymbol();
+        $suffix = trans('unit-of-measure::units.'.$this->getMeasurement()->value);
         $value = number_format($value, $precision, config('unit-of-measure.decimal_separator', '.'), config('unit-of-measure.thousand_separator', ','));
+        if ($trimDecimals) {
+            $value = rtrim(rtrim($value, '0'), config('unit-of-measure.decimal_separator', '.'));
+        }
 
-        return $value.$suffix;
+        return $value.($withSuffix ? ' '.$suffix : '');
     }
 
     /**
@@ -134,7 +137,7 @@ abstract class Unit implements Arrayable, Castable, Jsonable, JsonSerializable, 
      */
     public function formatSimple(int $precision = 2): string
     {
-        return number_format($this->getValue(), $precision, config('unit-of-measure.decimal_separator', '.'), config('unit-of-measure.thousand_separator', ','));
+        return $this->format(precision: $precision, trimDecimals: false, withSuffix: false);
     }
 
     /**
@@ -142,7 +145,7 @@ abstract class Unit implements Arrayable, Castable, Jsonable, JsonSerializable, 
      */
     public function formatWithoutZeros(): string
     {
-        return number_format($this->getValue(), 0, config('unit-of-measure.decimal_separator', '.'), config('unit-of-measure.thousand_separator', ','));
+        return $this->format(precision: 0, trimDecimals: false, withSuffix: false);
     }
 
     /**
@@ -208,7 +211,7 @@ abstract class Unit implements Arrayable, Castable, Jsonable, JsonSerializable, 
         return [
             'value' => $this->value,
             'measurement' => $this->measurement->value,
-            'symbol' => $this->measurement->getSymbol(),
+            'symbol' => trans('unit-of-measure::units.'.$this->measurement->value),
         ];
     }
 

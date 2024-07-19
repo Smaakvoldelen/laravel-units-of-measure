@@ -17,11 +17,6 @@ interface Measurement extends BackedEnum
     public function convertToBaseValue(float $value): float;
 
     /**
-     * Get the symbol for the measurement.
-     */
-    public function getSymbol(): string;
-
-    /**
      * Convert the measurement to a given value and measurement.
      */
     public function to(float $value, Measurement $measurement): float;

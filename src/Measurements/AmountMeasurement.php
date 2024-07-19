@@ -90,12 +90,4 @@ enum AmountMeasurement: string implements Measurement
             self::YOCTOMOLE => 1e-24,
         };
     }
-
-    /**
-     * Get the symbol for the measurement.
-     */
-    public function getSymbol(): string
-    {
-        return $this->value;
-    }
 }

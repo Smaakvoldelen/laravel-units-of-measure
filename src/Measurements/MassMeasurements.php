@@ -120,12 +120,4 @@ enum MassMeasurements: string implements Measurement
             self::LONGTON => 4.5359237e-1 * 2240,
         };
     }
-
-    /**
-     * Get the symbol for the measurement.
-     */
-    public function getSymbol(): string
-    {
-        return $this->value;
-    }
 }

@@ -7,8 +7,10 @@ use Smaakvoldelen\UnitsOfMeasure\Units\Mass;
 it('can be formatted', function () {
     $unit = Mass::from('1.5 kg');
 
-    expect($unit->format())
-        ->toEqual('1,50 kg')
+    expect($unit->format(trimDecimals: false))
+        ->toEqual('1,50 kilogram')
+        ->and($unit->format())
+        ->toEqual('1,5 kilogram')
         ->and($unit->formatSimple())
         ->toEqual('1,50')
         ->and($unit->formatWithoutZeros())
@@ -22,7 +24,7 @@ it('can be casted', function () {
 
 it('can be rendered', function () {
     expect(Mass::from('1.5 kg')->render())
-        ->toEqual('1,50 kg');
+        ->toEqual('1,5 kilogram');
 });
 
 it('can be parsed as string', function () {
@@ -45,12 +47,12 @@ it('can be converted to an array', function () {
         ->toEqual([
             'value' => 1,
             'measurement' => 'kg',
-            'symbol' => 'kg',
+            'symbol' => 'kilogram',
         ]);
 });
 
 it('can be converted to json', function () {
-    $jsonOutput = '{"value":1,"measurement":"kg","symbol":"kg"}';
+    $jsonOutput = '{"value":1,"measurement":"kg","symbol":"kilogram"}';
 
     expect(Mass::from('1 kg')->toJson())
         ->toEqual($jsonOutput)

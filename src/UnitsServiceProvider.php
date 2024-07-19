@@ -16,6 +16,7 @@ class UnitsServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-unit-of-measure')
-            ->hasConfigFile();
+            ->hasConfigFile()
+            ->hasTranslations();
     }
 }

@@ -120,12 +120,4 @@ enum LengthMeasurement: string implements Measurement
             self::LEAGUE => 4828.032,
         };
     }
-
-    /**
-     * Get the symbol for the measurement.
-     */
-    public function getSymbol(): string
-    {
-        return $this->value;
-    }
 }

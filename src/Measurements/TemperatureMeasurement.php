@@ -51,12 +51,4 @@ enum TemperatureMeasurement: string implements Measurement
             self::ROMER => ($value - 7.5) * (40 / 21) + 273.15,
         };
     }
-
-    /**
-     * Get the symbol for the measurement.
-     */
-    public function getSymbol(): string
-    {
-        return $this->value;
-    }
 }
