@@ -100,6 +100,7 @@ enum EnergyMeasurement: string implements Measurement
             'attocalorie', 'attocalories' => self::ATTOCALORIE,
             'zeptocalorie', 'zeptocalories' => self::ZEPTOCALORIE,
             'yoctocalorie', 'yoctocalories' => self::YOCTOCALORIE,
+            default => null,
         };
     }
 
