@@ -35,5 +35,5 @@ it('can set a unit to a null value', function () {
 });
 
 it('throws an exception when setting an invalid value', function () {
-    (new UnitCast())->set($this->model, 'unit', 1, []);
+    (new UnitCast)->set($this->model, 'unit', 1, []);
 })->throws(UnexpectedValueException::class);
