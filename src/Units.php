@@ -4,6 +4,7 @@ namespace Smaakvoldelen\UnitsOfMeasure;
 
 use Exception;
 use Smaakvoldelen\UnitsOfMeasure\Units\Amount;
+use Smaakvoldelen\UnitsOfMeasure\Units\Energy;
 use Smaakvoldelen\UnitsOfMeasure\Units\Length;
 use Smaakvoldelen\UnitsOfMeasure\Units\Mass;
 use Smaakvoldelen\UnitsOfMeasure\Units\Temperature;
@@ -21,6 +22,7 @@ class Units
             Length::class,
             Volume::class,
             Temperature::class,
+            Energy::class,
             Amount::class,
         ];
 
