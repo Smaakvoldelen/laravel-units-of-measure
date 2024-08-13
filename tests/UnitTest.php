@@ -5,16 +5,19 @@ use Smaakvoldelen\UnitsOfMeasure\Measurements\MassMeasurements;
 use Smaakvoldelen\UnitsOfMeasure\Units\Mass;
 
 it('can be formatted', function () {
-    $unit = Mass::from('1.5 kg');
+    $pluralUnit = Mass::from('1.5 kg');
+    $singularUnit = Mass::from('1 kg');
 
-    expect($unit->format(trimDecimals: false))
-        ->toEqual('1,50 kilogram')
-        ->and($unit->format())
-        ->toEqual('1,5 kilogram')
-        ->and($unit->formatSimple())
+    expect($pluralUnit->format(trimDecimals: false))
+        ->toEqual('1,50 kilograms')
+        ->and($pluralUnit->format())
+        ->toEqual('1,5 kilograms')
+        ->and($pluralUnit->formatSimple())
         ->toEqual('1,50')
-        ->and($unit->formatWithoutZeros())
-        ->toEqual('2');
+        ->and($pluralUnit->formatWithoutZeros())
+        ->toEqual('2')
+        ->and($singularUnit->format())
+        ->toEqual('1 kilogram');
 });
 
 it('can be casted', function () {
@@ -24,7 +27,7 @@ it('can be casted', function () {
 
 it('can be rendered', function () {
     expect(Mass::from('1.5 kg')->render())
-        ->toEqual('1,5 kilogram');
+        ->toEqual('1,5 kilograms');
 });
 
 it('can be parsed as string', function () {

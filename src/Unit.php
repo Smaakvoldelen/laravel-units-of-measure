@@ -123,7 +123,7 @@ abstract class Unit implements Arrayable, Castable, Jsonable, JsonSerializable, 
     public function format(int $precision = 2, bool $trimDecimals = true, bool $withSuffix = true): string
     {
         $value = $this->getValue();
-        $suffix = trans('unit-of-measure::units.'.$this->getMeasurement()->value);
+        $suffix = trans_choice('unit-of-measure::units.'.preg_replace('/\s+/', '_', $this->getMeasurement()->value), $value);
         $value = number_format($value, $precision, config('unit-of-measure.decimal_separator', '.'), config('unit-of-measure.thousand_separator', ','));
         if ($trimDecimals) {
             $value = rtrim(rtrim($value, '0'), config('unit-of-measure.decimal_separator', '.'));
@@ -211,7 +211,7 @@ abstract class Unit implements Arrayable, Castable, Jsonable, JsonSerializable, 
         return [
             'value' => $this->value,
             'measurement' => $this->measurement->value,
-            'symbol' => trans('unit-of-measure::units.'.$this->measurement->value),
+            'symbol' => trans_choice('unit-of-measure::units.'.preg_replace('/\s+/', '_', $this->getMeasurement()->value), $this->value),
         ];
     }
 
