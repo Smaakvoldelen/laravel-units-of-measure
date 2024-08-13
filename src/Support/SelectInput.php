@@ -4,6 +4,7 @@ namespace Smaakvoldelen\UnitsOfMeasure\Support;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use Smaakvoldelen\UnitsOfMeasure\Measurements\AmountMeasurement;
 use Smaakvoldelen\UnitsOfMeasure\Measurements\MassMeasurements;
 use Smaakvoldelen\UnitsOfMeasure\Measurements\VolumeMeasurements;
 use Smaakvoldelen\UnitsOfMeasure\Units\Mass;
@@ -20,10 +21,14 @@ class SelectInput
     {
         $collection = collect();
         $measurements = [
+            new Mass(1, AmountMeasurement::QUANTITY),
             new Mass(1, MassMeasurements::GRAM),
             new Mass(1, MassMeasurements::KILOGRAM),
             new Volume(1, MassMeasurements::OUNCE),
             new Volume(1, MassMeasurements::POUND),
+            new Volume(1, VolumeMeasurements::MILLILITER),
+            new Volume(1, VolumeMeasurements::CENTILITER),
+            new Volume(1, VolumeMeasurements::LITER),
             new Volume(1, VolumeMeasurements::CUP),
             new Volume(1, VolumeMeasurements::TEASPOON),
             new Volume(1, VolumeMeasurements::TABLESPOON),
