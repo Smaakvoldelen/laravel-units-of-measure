@@ -3,7 +3,7 @@
 use Smaakvoldelen\UnitsOfMeasure\Rules\UnitExpression;
 
 it('validates a simple unit expression', function () {
-    $rule = new UnitExpression();
+    $rule = new UnitExpression;
 
     // Valid unit expressions
     expect(validateWithRule('10 kg', $rule))->toBeTrue()
@@ -19,7 +19,7 @@ it('validates a simple unit expression', function () {
 });
 
 it('validates with multiple spaces or special characters', function () {
-    $rule = new UnitExpression();
+    $rule = new UnitExpression;
 
     // Valid with multiple spaces and dot in the unit
     expect(validateWithRule('3.5  kg', $rule))->toBeTrue()
@@ -38,5 +38,5 @@ function validateWithRule(mixed $value, UnitExpression $rule): bool
         $failed = true;
     });
 
-    return !$failed;
+    return ! $failed;
 }
