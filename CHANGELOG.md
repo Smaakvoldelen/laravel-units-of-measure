@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-unit-of-measure` will be documented in this file.
 
+## 0.1.7 - 2024-08-14
+
+**Full Changelog**: https://github.com/Smaakvoldelen/laravel-units-of-measure/compare/0.1.6...0.1.7
+
 ## 0.1.6 - 2024-08-13
 
 **Full Changelog**: https://github.com/Smaakvoldelen/laravel-units-of-measure/compare/0.1.5...0.1.6
