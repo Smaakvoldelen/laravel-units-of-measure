@@ -23,7 +23,7 @@ it('validates with multiple spaces or special characters', function () {
         ->and(validateWithRule('5.7    m', $rule))->toBeTrue();
 });
 
-function validateWithRule(mixed $value, UnitExpression|null $rule): bool
+function validateWithRule(mixed $value, ?UnitExpression $rule): bool
 {
     $failed = false;
 
