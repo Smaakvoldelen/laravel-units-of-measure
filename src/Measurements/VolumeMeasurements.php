@@ -74,6 +74,9 @@ enum VolumeMeasurements: string implements Measurement
     case OIL_BARREL = 'oil bbl';
     case TABLESPOON = 'Tbsp';
     case TEASPOON = 'tsp';
+    case TAD = 'tad';
+    case DASH = 'dash';
+    case PINCH = 'pn';
     case CUP = 'cp';
     case LIQUID_GALLON = 'liquid gal';
     case LIQUID_PINT = 'liquid pt';
@@ -151,6 +154,9 @@ enum VolumeMeasurements: string implements Measurement
             'oil barrel', 'oil barrels' => self::OIL_BARREL,
             'tablespoon', 'tablespoons' => self::TABLESPOON,
             'teaspoon', 'teaspoons' => self::TEASPOON,
+            'tad', 'tads' => self::TAD,
+            'dash', 'dashes' => self::DASH,
+            'pinch', 'pinches' => self::PINCH,
             'cup', 'cups' => self::CUP,
             'liquid gallon', 'liquid gallons' => self::LIQUID_GALLON,
             'liquid pint', 'liquid pints' => self::LIQUID_PINT,
@@ -231,6 +237,9 @@ enum VolumeMeasurements: string implements Measurement
             self::OIL_BARREL => 158.9872949,
             self::TABLESPOON => 0.0147867648,
             self::TEASPOON => 0.00492892159,
+            self::TAD => 0.001232230398,
+            self::DASH => 0.0006161151988,
+            self::PINCH => 0.0003080576,
             self::CUP => 0.236588237,
             self::SHOT => 0.0443602943,
         };

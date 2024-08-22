@@ -32,6 +32,9 @@ class SelectInput
             new Volume(1, VolumeMeasurements::CUP),
             new Volume(1, VolumeMeasurements::TEASPOON),
             new Volume(1, VolumeMeasurements::TABLESPOON),
+            new Volume(1, VolumeMeasurements::TAD),
+            new Volume(1, VolumeMeasurements::DASH),
+            new Volume(1, VolumeMeasurements::PINCH),
         ];
 
         foreach ($measurements as $measurement) {
